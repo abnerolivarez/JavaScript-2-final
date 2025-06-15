@@ -868,13 +868,7 @@ function displayProducts(products) {
 function addToCart(productId) {
   const isLoggedIn = localStorage.getItem("isLoggedIn");
 
-  if (!isLoggedIn || isLoggedIn !== "true") {
-    // Ask the user to log in first
-    if (confirm("You need to log in to add items to the cart. Go to login page?")) {
-     
-    }
-    return;
-  }
+ 
 
   //==command to set the productData in array==//
   const product = productData.find(p => p.id === productId);
