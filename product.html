@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/addtocart.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/addtocart.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/item.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+    <title>Product</title>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar" id="navbar">
+            
+           <div class="logo">
+                <a href="product.html">
+                  
+                    <h2>
+                    A-SHOP <i class="fa-solid fa-house house"title="home"></i>
+                    </h2>
+                </a>
+            </div>
+           
+             <div class="search-container">
+                <input type="text" class="search" id="search" placeholder="Search Items" >
+                <i class="fa-solid fa-magnifying-glass search-icon " id="search-icon"></i>
+            </div>
+            
+            <div class="cart-wrapper">
+                <div class="cart-icon" id="cart-icon">
+                    <i class="fa-solid fa-cart-arrow-down cart"title="cart"></i>
+                    <span class="cart-number" id="cart-number">0</span>
+                </div>
+                
+                 <div class="cart-dropdown" id="cart-dropdown">
+                      <!-- This is for Dropdown cart meassage -->
+                 </div>
+            </div>
+
+            <div class="register-container">
+              <div class="register-title">
+                <span class="myOrderBtn" id="myOrderBtn">My order</span>
+                  <span class="divider">|</span>
+
+                  <a href="index.html">
+                      <i class="fa-solid fa-user user" title="Logout"></i>
+                      <span class="logOut" id="logOut" title="Logout">Logout</span>
+                  </a>
+                </div>
+                 <div class="show-dropdown-option">
+                  <p class="login" id="order">My Order</p>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+
+ <!-- ==================Hero Section ===================-->
+<section class="hero">
+  <div class="carousel-product-container" id="carousel-container">
+    <div class="carousel-slides" id="carousel-slides">
+      <img class="slides" src="/images/hero1.png" alt="Slide 1">
+      <img class="slides" src="/images/hero2.png" alt="Slide 2">
+      <img class="slides" src="/images/hero3.png" alt="Slide 3">
+      <img class="slides" src="/images/hero4.png" alt="Slide 4">
+
+       <!-- Cloned first slide -->
+      <img class="slides" src="/images/hero1.png" alt="Cloned Slide 1">
+    </div>
+  </div>
+
+  <!-- Navigation Dots -->
+  <div class="navigation-manual" id="dots-container">
+    <span class="manual-btn" data-slide="0"></span>
+    <span class="manual-btn" data-slide="1"></span>
+    <span class="manual-btn" data-slide="2"></span>
+    <span class="manual-btn" data-slide="3"></span>
+  </div>
+</section>
+
+<!--Category Items Section -->
+<section class="category-title" data-aos="zoom-in">
+    <p class="items-option">Items Option</p>
+    <button class="showAllProducts"onclick="showAllProducts();">Show All</button>
+    <div class="category-items" id="category-items"></div>
+
+    <div class="arrow-container">
+      <button class="arrow left-arrow">&#8592;</button>
+      <button class="arrow right-arrow">&#8594;</button>
+    </div>
+</section>
+
+<!-- Product Section -->
+<section data-aos="zoom-in" id="product-section">
+    <div class="products" id="products" data-aos="zoom-out"></div>
+</section>
+
+<!-- =============Footer Section==================== -->
+ 
+<footer class="footer" data-aos="zoom-in">
+  <div class="footer-container" data-aos="fade-right">
+    <div class="footer-column">
+      <h3>About Us</h3>
+      <p><strong>A-Shop</strong> was founded in 2025 through the dedicated efforts of <strong>Mr. A.C.O.</strong></p>
+    </div>
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="product.html">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Payment Option</h3>
+      <ul class="social-links">
+        <li><a href="#">Credit/Debit card</a></li>
+        <li><a href="#">Installment</a></li>
+        <li><a href="#">Paymaya</a></li>
+        <li><a href="#">G-Cash</a></li>
+        <li><a href="#">COD</a></li>
+        <li><a href="#">Bank</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <ul class="social-links">
+        <li><i class="fa-brands fa-facebook facebook"></i><a href="#">Facebook</a></li>
+        <li><i class="fa-brands fa-instagram instagram"></i><a href="#">Instagram</a></li>
+        <li><i class="fa-brands fa-square-twitter twitter"></i><a href="#">Twitter</a></li>
+        <li><i class="fa-brands fa-youtube youtube"></i><a href="https://www.youtube.com/"target="_blank">YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 <strong>A-SHOP </strong> All rights reserved.</p>
+    <p>Developed by: <strong>ABNER OLIVAREZ</strong></p>
+  </div>
+</footer>
+    
+    <script src="js/producthero.js"></script>
+    <script src="js/product.js"></script>
+    
+
+    
+    
+   
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init();</script>
+
+    <script>
+            AOS.init({
+            duration: 1500, // animation duration (ms)
+            once: false,    // animate only once
+            offset: 100    // offset from trigger point
+        });
+    </script>
+
+</body>
+</html>

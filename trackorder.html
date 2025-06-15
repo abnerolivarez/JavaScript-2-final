@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/trackorder.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/addtocart.css"> 
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+    <title>Track Orders</title>
+</head>
+<body>
+      <!-- ======Navbar====== -->
+     <div id="navbar-output"></div>
+      <!-- ======Navbar====== -->
+ 
+
+<div class="container">
+    <div class="order-header-container">
+      <div class="header">
+        <a href="">All Items</a>
+        <a href="">Purchase</a>
+        <a href="">For Payment</a>
+        <a href="">For Shipping</a>
+        <a href="">To Recieve<span>(1)</span></a>
+        <a href="">Completed</a>
+        <a href="">Refuse</a>
+        <a href="">Return Item</a>
+      </div>
+    </div>
+  </div>
+  
+  <div id="track-order-summary" class="track-order-summary"></div>
+
+
+<!-- =============Footer Section==================== -->
+ <div id="footer-output"></div>
+ <!-- =============Footer Section==================== -->
+
+  <script src="js/trackorder.js"></script>
+
+  <script src="js/sharedlistener.js"></script>
+  <script src="js/sharenavbar.js"></script>
+  <script>shareNavbar();</script>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init();</script>
+
+    <script>
+            AOS.init({
+            duration: 1500, // animation duration (ms)
+            once: false,    // animate only once
+            offset: 100    // offset from trigger point
+        });
+    </script>
+
+</body>
+</html>

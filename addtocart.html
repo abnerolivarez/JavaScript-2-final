@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/addtocart.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/media.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+
+    <title>Add To Cart (Thumbnail LigthBox)</title>
+</head>
+<body>
+     <!-- <div id="navbar-output"></div> -->
+     <header>
+        <nav class="navbar" id="navbar">
+            
+        <div class="logo">
+            <a href="product.html">
+                <h2>
+                    A-SHOP <i class="fa-solid fa-house house"title="home"></i>
+                </h2>
+            </a>
+        </div>
+           
+             <div class="search-container">
+                <input type="text" class="search" id="search" placeholder="Search Items">
+                <i class="fa-solid fa-magnifying-glass search-icon " id="search-icon"></i>
+            </div>
+            
+            <div class="cart-wrapper">
+                <div class="cart-icon" id="cart-icon">
+                    <i class="fa-solid fa-cart-arrow-down cart" title="cart"></i>
+                    <span class="cart-number" id="cart-number">0</span>
+                </div>
+
+                 <div class="cart-dropdown" id="cart-dropdown">
+                     
+                 </div>
+            </div>
+
+            <div class="register-container">
+              <span class="myOrderBtn" id="myOrderBtn">My order</span>
+              <span class="divider">|</span>
+                
+                <a href="index.html">
+                    <i class="fa-solid fa-user user" title="Logout"></i>
+                    <span class="login" id="logOut" title="Logout">Logout</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+
+<!-- ========Add To CArt Section=============== -->
+    <section class="addtocart-main">
+    
+        <div class="addtocart-container">
+            <div>
+                <img class="product-img lightbox-thumb"id="product-img" src="" alt="">
+                    <div class="image-item">
+                        <img class="lightbox-thumb" id="product-image1"src="" alt="">
+                        <img class="lightbox-thumb" id="product-image2"src="" alt="">
+                        <img class="lightbox-thumb" id="product-image3"src="" alt="">
+                        <img class="lightbox-thumb" id="product-image4"src="" alt="">
+                        <img class="lightbox-thumb" id="product-image5"src="" alt="">
+                    </div>
+            
+            </div>
+                    <!-- Lightbox Overlay -->
+        <div id="lightbox-overlay">
+            <span id="lightbox-close">&times;</span>
+            <img id="lightbox-image" src="" alt="">
+            <div id="lightbox-nav">
+                <span id="lightbox-prev">&#10094;</span>
+                <span id="lightbox-next">&#10095;</span>
+            </div>
+        </div>
+         
+<!--==addtocart checkout Section get the details from productData inside array=====-->
+            <div class="product-title">
+            <h2 id="product-title"></h2>
+          
+          <!-- Star Rating -->
+          <div class="star-rating" id="starRating">
+            <span class="upper-rating"id="upper-rating">4.5</span>
+            <span class="rate-number" id="rate-number">⭐</span>
+
+            <span class="rating">| Rating</span>
+            <span class="rating-value">415</span>
+            <span class="sold">| Sold</span>
+            <span class="sold-value">400</span>
+          </div>
+
+                <div class="product-description-container">
+                    <p id="product-description1"></p>
+                    <p id="product-description2"></p>
+                    <p id="product-description3"></p>
+                </div>
+                <div class="discount-container">
+                    <p class="price" id="product-price"></p>
+                    <span class="product-discount" id="product-discount"></span>
+                </div>
+
+                <div class="counter-container">
+                    <span>Quantity</span>
+                    <button class="decrementBtn" id="decrementBtn">-</button>
+                    <span class="counter" id="counter">1</span>
+                    <button class="incrementBtn" id="incrementBtn">+</button>
+                    
+                    <!-- Available Items -->
+                    <span class="stocks" id="stocks">100 pcs available</span>
+                </div>
+                    <div class="Cart-Btn">
+                        <button class="addtoCartBtn" id="addtoCartBtn">Add to Cart
+                          <i class="fa-solid fa-cart-plus "></i>
+                        </button>
+                        <button class="resetBtn" id="resetBtn">Reset Cart
+                          <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </div>
+                    <p>Total: <span class="total-price" id="total-price">₱100</span></p>
+                    
+                    <div class="checkback-container">
+                        <button class="checkoutBtn">Checkout</button>
+                        <a class="backBtn"href="product.html">Back</a>
+                        
+                    </div>
+                      <p class="toast" id="toast">This is toast</p>
+                    
+            </div>
+        </div>
+    </section>
+
+<!-- Lightbox for new arrival items -->
+<section class="new-arrivals">
+  
+    <h2 class="section-title"><span>New</span> Arrivals </h2>
+        
+    <div class="product-card" id="product-card"></div> 
+
+        <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox-modal">
+      <span class="close">&times;</span>
+      <div class="lightbox-slider-container">
+        <button class="Btn-prev">&#10094;</button>
+        <img class="lightbox-content" id="lightbox-img" alt="Product image">
+        <button class="Btn-next">&#10095;</button>
+      </div>
+    </div>
+
+</section>
+
+<!-- ======Costumer Review====== -->
+<section class="star-container">
+
+<div class="product-review-container">
+    <h1>Product Review</h1>
+    <div class="product" data-product-id="product1">
+      
+      <span class="client-name" id="client-name">Brian</span>
+      <img src="images/client.png" alt="" class="client-image">
+      
+      <span class="star-review" id="star-review"></span>
+      <p class="review-comments"id="review-comments">The price is very affordable.</p>
+          
+        <div class="product-image-review"  id="product-image-review"></div> 
+     
+    </div>
+   
+</div>
+
+
+<div class="comment-container">
+    <h3>Leave Your Comments Below</h3>
+    <div class="star-rating" id="starRating ">
+      <span class="star"  data-value="1">&#9733;</span>
+      <span class="star"  data-value="2">&#9733;</span>
+      <span class="star"  data-value="3">&#9733;</span>
+      <span class="star"  data-value="4">&#9733;</span>
+      <span class="star"  data-value="5">&#9733;</span>
+    </div>
+
+    <p>Your Rating: <span id="ratingValue">0</span> / 5</p>
+
+    <div class="review-box">
+      <textarea id="reviewText" placeholder="Write your review here..." rows="4" cols="50"></textarea><br><br>
+      <input type="file" id="upload-image" multiple><br><br>
+      <button class="submitReview"id="submitReview">Submit Review</button>
+    </div>
+
+    <div id="reviewOutput"></div>
+</div> 
+</section>
+
+<!-- =============Footer Section==================== -->
+<footer class="footer" data-aos="zoom-in">
+  <div class="footer-container" data-aos="fade-right">
+    <div class="footer-column">
+      <h3>About Us</h3>
+      <p><strong>A-Shop</strong> was founded in 2025 through the dedicated efforts of <strong>Mr. A.C.O.</strong></p>
+    </div>
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="product.html">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Payment Option</h3>
+      <ul class="social-links">
+        <li><a href="#">Credit/Debit card</a></li>
+        <li><a href="#">Installment</a></li>
+        <li><a href="#">Paymaya</a></li>
+        <li><a href="#">G-Cash</a></li>
+        <li><a href="#">COD</a></li>
+        <li><a href="#">Bank</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <ul class="social-links">
+        <li><i class="fa-brands fa-facebook facebook"></i><a href="#">Facebook</a></li>
+        <li><i class="fa-brands fa-instagram instagram"></i><a href="#">Instagram</a></li>
+        <li><i class="fa-brands fa-square-twitter twitter"></i><a href="#">Twitter</a></li>
+        <li><i class="fa-brands fa-youtube youtube"></i><a href="https://www.youtube.com/"target="_blank">YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 <strong>A-SHOP </strong> All rights reserved.</p>
+    <p>Developed by: <strong>ABNER OLIVAREZ</strong></p>
+  </div>
+</footer>
+
+
+    <script src="js/addtocart.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init();</script>
+
+    <script>
+            AOS.init({
+            duration: 1500, // animation duration (ms)
+            once: false,    // animate only once
+            offset: 100    // offset from trigger point
+        });
+    </script>
+
+</body>
+</html>

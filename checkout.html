@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="css/media.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+    <title>Checkout Convertion here</title>
+
+</head>
+<body>
+    
+  <div class="body-container">
+    <div class="checkout-container">
+        <div class="checkout-title">
+            <h2>Checkout Page</h2>
+            <h1>A-SHOP</h1>
+        </div>
+
+      <!-- Customer Info -->
+
+      <div class="billing-section">
+        <h3>Costumer Billing Information</h3>
+
+     <!-- you can add from here -->
+      
+          <div class="main-billing-info">
+            <div class="name-container">
+              <label for="firstName">First Name</label>
+              <input type="text" name="firstName"id="firstName" placeholder="First name">
+            </div>
+
+            <div class="name-container">
+              <label for="lastName">Last Name</label>
+              <input type="text" name="lastName"id="lastName" placeholder="Last name">
+            </div>
+
+            <div class="name-container">
+              <label for="mobile">Contact Number</label>
+              <input type="text" name="mobile"id="mobile" placeholder="Mobile Number">
+            </div>
+
+            <div class="name-container">
+              <label for="email">Email Address</label>
+              <input type="email" name="email" id="email" placeholder="Email">
+            </div>
+          </div>
+           
+            <div class="shipping-address">
+              <label for="address">Shipping Address</label>
+              <input type="text" name="address" id="address" placeholder="Complete Address">
+            </div>
+
+            <div class="zipcode-container">
+              <label for="zipcode">Postal code</label>
+              <input type="text" name="zipcode" id="zipcode" placeholder="Ex: 4027">
+            </div>
+
+            <!-- this is media query set up -->
+            <div class="order-summary-container">
+              <div class="sections orders-summary">
+                <h3>Order Summary</h3>
+                <div class="orders-item"></div>
+                  <div class="orders-item"></div>
+                  <div class="orders-item total">
+                  
+                  <span>₱40.00</span>
+                </div>
+              </div>
+            </div>
+
+      </div>
+
+      <!-- =================Place Order button==================== -->
+        <div class="btn-container">
+          <button type="submit"class="checkout-btn" id="place-order">Place Order</button>
+
+      <!-- you can add form here -->
+
+          <a href="addtocart.html">
+            <button class="back-btn">Back</button>
+          </a>
+        </div>
+           
+    <!-- ==========Payment========== -->
+    <div class="section-main-container">
+      <div class="payment-container">
+          <h3 class="payment-title">Payment Method</h3>
+          <label for="payment-method">Choose Payment Method:</label>
+        <select class="payment-method" id="payment-method">
+          <option value="cod">Cash on Delivery</option>
+          <option value="card" id="card">Credit/Debit Card</option>
+          <option value="installment" id="installment">Installment</option>
+          <option value="gcash">GCash</option>
+          <option value="paymaya">PayMaya</option>
+          <option value="bank">Bank</option>
+        </select>
+          
+          <div class="gcash-container" id="gcash-container"style='display:none'>
+            <img class="gcash" id="gcash"src="images/gcash.png" alt=""onclick="openLightbox()">
+            <span class="clickme">Click Me</span>
+          </div>
+
+          <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <img src="images/gcash.png" alt="GCash QR Enlarged" class="lightbox-img">
+          </div>
+      </div>
+
+  <!-- Credit/Debit Card -->
+      <div class="creditCard" id="creditCard-container">
+        <div class="card-fields-container" id="card-fields-container">
+            <label for="card">Card Number</label>
+            <p>Note: Convert Dollar to Peso before you purchase</p>
+            <input type="text" name="card"id="card" placeholder="Your card number">
+
+            <label for="expiry">Expiry Date</label>
+            <input type="date" name="expiry"id="expiry" placeholder="MM/YY">
+
+            <label for="cvv">CVV</label>
+            <input type="number" name="cvv" id="cvv" placeholder="123">
+        </div>
+
+        <div class="dollar-container">
+              <h2>Dollar to Peso Converter</h2>
+              <p>Dollar Rate is ₱53.50</p>
+                <label for="dollarInput">Enter Amount in USD:</label>
+                <input type="number"id="dollarInput" placeholder="e.g. $100"required>
+
+                <br><button id="convertToPeso">Convert</button>
+                <div class="result-convertion" id="result-convertion"></div>
+
+        </div>
+      </div>
+
+    <!-- Calculator Monthly & Yearly interest -->
+  <div id="calculator-container">
+      <h2>Monthly and Yearly Interest Calculator</h2>
+
+      <label for="principal">Principal Amount (₱):</label>
+      <input type="number" id="principal" placeholder="Enter principal amount">
+
+      <div class="note">Monthly interest rate is fixed at 0.5%.</div>
+
+      <label for="years">Number of Years:</label>
+      <input type="number" id="years" placeholder="Enter number of years">
+
+      <button id="calculateInterest">Calculate</button>
+
+      <div class="results" id="results"></div>
+  </div>
+
+      
+    </div>
+</div>
+
+  <!-- Order Summary -->
+    <div class="order-summary-container">
+      <div class="section order-summary">
+        <h3>Order Summary</h3>
+        <div class="order-item"></div>  
+          
+          <div class="total">
+            <span>₱40.00</span>  <!--this for total amount order-->
+          </div>
+
+      </div>
+    </div>
+      
+  </div>
+      
+
+
+<script src="js/checkout.js"></script>
+
+</body>
+</html>
