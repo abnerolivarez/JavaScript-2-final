@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&family=Jost:ital,wght@0,100..900;1,100..900&family=Satisfy&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+}
+
+.navbar{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, .4fr));
+    background-color: #ffefb4;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 5;
+}
+
+.logo a{
+    font-family: Jost,san serif;
+    text-decoration: none;
+    color: #000;
+    transition: all .3s ease-in-out;
+}
+.logo a:hover{
+    color: #4d4d4d;
+}
+
+input:focus{
+    outline: 2px solid #ffba18;
+    border: #ffd676;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* adjust max-width as needed */
+    margin: auto;
+}
+
+.search-container input {
+    width: 100%;
+    padding: .5rem;
+   
+    border-radius: .5rem;
+    font-size: 16px;
+}
+input::placeholder{
+    color: #99999962;
+}
+
+.search-icon {
+    position: absolute;
+    background-color: #d7d7d7;
+    width: 50px;
+    text-align: center;
+    margin-right: -.6rem;
+    padding: .5rem .7rem;
+    border-radius: .3rem;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    color: #474747;
+    font-size: 16px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+
+.search-icon:hover{
+    color: #dbdbdb;
+    background-color: #e9a301;
+   
+}
+
+/* Shopping Cart Section */
+.cart-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-icon {
+  cursor: pointer;
+  position: relative;
+  
+}
+
+.cart-dropdown {
+  display: none;
+  position: absolute;
+  top: 35px;
+  right: 10rem;
+  background-color: white;
+  color: #333;
+  width: 220px;
+  padding: 18px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  z-index: 100;
+  transition: all .3s ease-in-out;
+}
+
+/* Show dropdown on hover */
+.cart-wrapper:hover .cart-dropdown {
+  display: block;
+}
+
+.cart{
+    position: relative;
+    font-size: 1.3rem;
+    color: rgb(1, 49, 100);
+    margin-left: 1rem;
+    top: .5rem;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.cart:hover{
+    color: rgb(0, 119, 255);
+}
+
+.cart-number{
+    font-weight: 600;
+    color: rgb(249, 2, 2);
+}
+/* ========================================== */
+
+
+.signup {
+    color: #333;
+    padding: 0.2rem 1rem;
+    margin-right: .08rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.signup:hover, .login:hover{
+    color: #0162ff;
+    text-decoration: underline;
+}
+
+.google-Btn{
+    display: flex;       
+    align-items: center; 
+    gap: 8px;
+    padding: 0 1.2rem;            
+    cursor: pointer;
+}
+.google-logo{
+    width: 40px;
+    margin: 0 -1rem;
+}
+.google-name{
+    margin: 0 .5rem;
+}
+
+.modal {
+  position: relative; /* container for absolute positioning */
+}
+
+.close-icon {
+  position: absolute;
+  top: -1rem;
+  right: -11rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
+  transition: all .3s ease-in-out;
+}
+
+.close-icon:hover {
+  color: red;
+}
+
+
+.login{
+    margin-left: .5rem;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.divider{
+    margin-right: .6rem;
+}
+
+
+#toast{
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 8px;
+    font-family: Arial,san serif;
+    padding: 16px;
+    position: fixed;
+    z-index: 9999;
+    top: 85px;
+    right: 13rem;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0.5s;
+}
+#toast.show{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+ 

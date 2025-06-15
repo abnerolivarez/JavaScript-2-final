@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&family=Jost:ital,wght@0,100..900;1,100..900&family=Satisfy&display=swap');
+body{
+  font-family: Jost,sans-serif;
+  background: #dadada;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 90%;
+  margin: 7rem auto;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.header {
+  background: #02699cf0;
+  padding: 1.2rem;
+  font-size: 1rem;
+  display: flex;
+  flex-wrap: wrap;       
+  justify-content: space-between;              
+              
+  
+  
+}
+.header a{
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;   
+  transition: all .3s ease-in-out;
+}
+
+.header a:hover{
+  color:#000;
+}
+
+
+.track-order-summary{
+  max-width: 90%;
+  margin: -7rem auto;
+  margin-bottom: 5rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  
+}
+.order {
+  display: flex;
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+.order img {
+  width: 80px;
+  height: 80px;
+  margin-right: 15px;
+  border-radius: 4px;
+}
+.order-amount{
+  display: flex;
+  color: red;
+  font-size: 1.2rem;
+  justify-content: end;
+  margin-right: 1.5rem;
+  padding: 1rem;
+}
+.order-amount span{
+  color: #000;
+  font-size: 1rem;
+  margin: 0 .5rem;
+}
+.order-date{
+  padding: 1rem;
+  margin-bottom: -2rem;
+}
+
+.details {
+  flex: 1;
+}
+.details .store-name {
+  color: #555;
+  margin-bottom: 5px;
+}
+.details .product-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.completed-status{
+     color: green !important;
+     font-weight: 600;
+}
+.changed-color{
+  background-color: green !important;
+}
+.details .status {
+  margin-bottom: 10px;
+}
+.details .price {
+  color: #e91e63;
+  font-weight: bold;
+}
+.price span{
+  color: #000;
+}
+
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.actions button {
+  background: #e6004dd7;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.actions button:hover {
+ background: #ff2a00;
+  
+}
+
+.track-payment-method{
+  display: flex;
+  position: relative;
+  top: .8rem;
+  margin-left: .5rem;
+}
+.track-payment-method strong{
+  margin: 0 .5rem;
+  color: red;
+}
+
+.trash:hover{
+  color: rgb(12, 137, 239);
+  transition: all .2s ease-in-out;
+}
+

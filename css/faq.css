@@ -1,0 +1,121 @@
+
+.navbar-product{
+    margin-bottom: 10rem;
+}
+
+.logo{
+  cursor: pointer;
+}
+
+.faq-main{
+  display: grid;
+  place-items: center;
+  
+}
+    .faq-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+      width: 80%;
+      place-items: center;
+      position: relative;
+      top: 5rem;
+      column-gap: 5rem;
+      margin-bottom: 15rem;
+    }
+    .faq-item-container{
+      top: 3rem;
+      position: relative;
+      
+    }
+    
+    .faq-title {
+      padding: 7rem;
+      position: relative;
+      border-radius: 50%;
+      text-align: center;
+      top: 3rem;
+      color: #000000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.377);
+      background-image: url('/images/faq.png');
+      margin-bottom: 30px;
+      width: 90%;
+      height: 60vh;
+    }
+    .faq-title span{
+      width: 100%;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+      padding: 5px 0;
+      margin-bottom: 1rem;
+    }
+    .faq-item:hover{
+      background-color: #f0f0f0;
+    }
+
+    .faq-question {
+      cursor: pointer;
+      font-weight: bold;
+      position: relative;
+      padding: .5rem 0;
+    }
+
+    .faq-question::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      font-size: 20px;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.active .faq-question::after {
+      content: "-";
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      color: #000000;
+      transition: max-height 0.4s ease;
+      padding-left: 10px;
+      
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px; /* enough to reveal full answer */
+      margin-top: 10px;
+    }
+
+    /* show & hide  */
+    .showmore-container{
+      display: none;
+      margin-bottom: 1rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
+      opacity: 0;
+     
+    }
+    .showmore-container.show{
+      display: block;
+      max-height: 500px; /* adjust this to your content's max height */
+      opacity: 1;
+    }
+
+    .showmoreBtn{
+      padding: .7rem 1rem;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: .5rem;
+      background-color: #018be8;
+      cursor: pointer;
+    }
+    .showmoreBtn:hover{
+      background-color: #0070ba;
+    }
+    .color-transition{
+      background-color: black;
+    }
