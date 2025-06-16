@@ -991,11 +991,17 @@ document.getElementById('submit-loginBtn').addEventListener('click', () => {
       const payload = JSON.parse(atob(token.split('.')[1]));
       const email = payload.email;
       const username = email.split('@')[0];
+      const loader = document.getElementById('loader'); 
+        loader.classList.add('show');
 
       const userObj = {
         email: email,
         username: username
       };
+
+      setTimeout(()=>{
+      window.location.href = 'product.html';
+     },1500);
 
       localStorage.setItem('loggedInUser', JSON.stringify(userObj));
       
