@@ -13,10 +13,13 @@
 
     document.querySelector('.login-form').addEventListener('submit', function(e) {
     e.preventDefault(); 
-    // Redirect to product.html
-    alert('Successfully Login');
+        
+    const loader = document.getElementById('loader'); 
+    loader.classList.add('show');
+        
+    setTimeout(()=>{
     window.location.href = 'product.html';
-    
+    },1500);
 });
 
 
