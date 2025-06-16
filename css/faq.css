@@ -36,7 +36,7 @@
       top: 3rem;
       color: #000000;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.377);
-      background-image: url('/images/faq.png');
+      background-image: url('../images/faq.png');
       margin-bottom: 30px;
       width: 90%;
       height: 60vh;
