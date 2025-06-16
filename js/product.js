@@ -866,8 +866,6 @@ function displayProducts(products) {
 
 // ======Product it will  proceed into checkout option======// 
 function addToCart(productId) {
-  const isLoggedIn = localStorage.getItem("isLoggedIn");
-
  
 
   //==command to set the productData in array==//
