@@ -982,7 +982,7 @@ document.getElementById('submit-loginBtn').addEventListener('click', () => {
       };
 
       localStorage.setItem('loggedInUser', JSON.stringify(userObj));
-      window.location.href = 'product.html';
+      
     });
 
     // Google Sign-In Handler 2nd option if google login want to use
@@ -998,7 +998,7 @@ document.getElementById('submit-loginBtn').addEventListener('click', () => {
       };
 
       localStorage.setItem('loggedInUser', JSON.stringify(userObj));
-      window.location.href = "product.html";
+      
   }
 
 
