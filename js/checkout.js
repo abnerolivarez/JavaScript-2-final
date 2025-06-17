@@ -145,7 +145,7 @@ const calculateInterest = document.getElementById('calculateInterest').addEventL
   const monthlyInterest = principal * monthlyRate;
   
   // Calculate yearly interest (12 months of monthly interest)
-  const yearlyInterest = monthlyInterest * 12;
+  
   const monthlyInstallment = principal / months;
   const totalPayment = monthlyInterest* months + principal;
   const monthlyPaid = monthlyInstallment + monthlyInterest;
