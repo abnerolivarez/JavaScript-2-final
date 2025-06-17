@@ -767,11 +767,6 @@ showItemProduct.addEventListener('click',()=>{
 const searchInput = document.getElementById("search");
 const searchIcon = document.getElementById("search-icon");
 
-// Toggle input visibility
-searchIcon.addEventListener("click", () => {
-  searchInput.style.display = searchInput.style.display === "none" ? "inline-block" : "none";
-  searchInput.focus();
-});
 
 //=== Filter products on searching===//
 searchInput.addEventListener("keyup", () => {
