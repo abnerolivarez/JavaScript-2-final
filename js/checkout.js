@@ -132,46 +132,77 @@ document.getElementById('payment-method').addEventListener('change', function ()
 const calculateInterest = document.getElementById('calculateInterest').addEventListener('click',()=>{
 
   const principal = parseFloat(document.getElementById('principal').value);
-  const years = parseInt(document.getElementById('years').value);
-  const monthlyRate = 0.5; // Fixed annual interest rate
+  const months = parseInt(document.getElementById('months').value);
+  const monthlyRate = 0.05; // Fixed annual interest rate
 
-  if (isNaN(principal) || isNaN(years)) {
-    alert("Please enter valid numbers for principal and years.");
+  if (isNaN(principal) || isNaN(months)) {
+    alert("Please enter valid numbers for principal and months.");
     return;
   }
 
-  // Monthly interest
+  
  // Calculate monthly interest
-  const monthlyInterest = principal * (monthlyRate / 100);
-
+  const monthlyInterest = principal * monthlyRate;
+  
   // Calculate yearly interest (12 months of monthly interest)
   const yearlyInterest = monthlyInterest * 12;
-
+  const monthlyInstallment = principal / months;
+  const totalPayment = monthlyInterest* months + principal;
+  const monthlyPaid = monthlyInstallment + monthlyInterest;
+  const totalMonthlyInterest = months * monthlyInterest;
   const resultsDiv = document.getElementById('results');
   resultsDiv.innerHTML = `
-    <strong>Results:</strong><br>
-    Fixed Monthly Interest Rate: ${monthlyRate}%<br>
-    Monthly Interest: ₱${monthlyInterest.toFixed(2)}<br>
-    Yearly Interest: ₱${yearlyInterest.toFixed(2)}
+    <div class="interest-results">  
+      <strong>Results:</strong><br>
+      Monthly Installment Included Interest: ₱${monthlyPaid.toLocaleString()}<br>
+      Fixed Monthly Interest Rate: ${monthlyRate}%<br>
+      Monthly Interest Rate: ₱${monthlyInterest.toLocaleString()} x ${months} mons.= ₱${totalMonthlyInterest.toLocaleString()}<br>
+      Number of Installment: ${months} mons.<br>
+      <h3>Total Amount to be Paid: <span>₱${totalPayment.toLocaleString()}</span></h3>
+  </div>
   `;
 });
 
 
 // Convert Dollar to Peso//
-const convertToPeso = document.getElementById('convertToPeso').addEventListener('click',()=>{
-      const exchangeRate = 52.5; // Example fixed rate: $1 = ₱52.50
-      const dollarAmount = parseFloat(document.getElementById('dollarInput').value);
+window.addEventListener('DOMContentLoaded', async () => {
+  try {
+    const response = await fetch('https://v6.exchangerate-api.com/v6/6870cdf0c3d64aa9aa6d0cd5/latest/USD');
+    const data = await response.json();
+    const exchangeRate = data.conversion_rates.PHP;
 
-      if (isNaN(dollarAmount) || dollarAmount < 0) {
-        document.getElementById('result-convertion').textContent = 'Please enter a valid amount.';
-        return;
-      }
+    document.getElementById('dollar-rate').textContent = `Current Rate: ₱${exchangeRate.toFixed(2)}`;
+  } catch (error) {
+    document.getElementById('dollar-rate').textContent = 'Unable to fetch current rate.';
+    console.error(error);
+  }
+});
 
-      const pesoAmount = dollarAmount * exchangeRate;
-      document.getElementById('result-convertion').textContent = 
-        `$${dollarAmount.toFixed(2)} = ₱${pesoAmount.toLocaleString(2)}`;
-  });
+const convertToPeso = document.getElementById('convertToPeso').addEventListener('click', async () => {
+  const dollarAmount = parseFloat(document.getElementById('dollarInput').value);
 
+  if (isNaN(dollarAmount) || dollarAmount < 0) {
+    document.getElementById('result-convertion').textContent = 'Please enter a valid amount.';
+    return;
+  }
+
+  try {
+    // Fetch live exchange rate
+    const response = await fetch('https://v6.exchangerate-api.com/v6/6870cdf0c3d64aa9aa6d0cd5/latest/USD');
+    const data = await response.json();
+    const exchangeRate = data.conversion_rates.PHP;
+
+    // Show the current rate in the element with id="dollar-rate"
+    document.getElementById('dollar-rate').textContent = `Current Rate: ₱${exchangeRate.toFixed(2)} `;
+
+    const pesoAmount = dollarAmount * exchangeRate;
+    document.getElementById('result-convertion').textContent = 
+      `$${dollarAmount.toFixed(2)} = ₱${pesoAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  } catch (error) {
+    document.getElementById('result-convertion').textContent = 'Error fetching exchange rate.';
+    console.error(error);
+  }
+});
 
   // ======Lightbox=========//
     function openLightbox() {
