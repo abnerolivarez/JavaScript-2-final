@@ -692,7 +692,7 @@ const globalSearchButton = document.getElementById("search-icon");
 performSearch = ()=>{
     const searchTerm = globalSearchInput.value.trim();
     if(searchTerm){
-         window.location.href = `/product.html?search=${encodeURIComponent(searchTerm)}`;
+         window.location.href = `product.html?search=${encodeURIComponent(searchTerm)}`;
     }
 }
 
