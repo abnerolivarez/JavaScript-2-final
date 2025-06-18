@@ -48,6 +48,53 @@
   color:#0d76ff
 }
 
+
+/* Dropdown logout in navbar*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Button */
+.dropbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #e0e0e0;
+}
+
+/* Show on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* ================================== */
+
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 4 columns if enough space */
