@@ -21,17 +21,6 @@ const categoryItems = [
 
 ];
 
-//==after login from index.html it will save the user/email here & display in logOut id 
-// window.addEventListener('DOMContentLoaded', () => {
-//   const savedEmail = localStorage.getItem('loggedInUser');
-//   console.log('Page loaded. Retrieved from localStorage:', savedEmail);
-
-//   if (savedEmail) {
-//     document.getElementById('logOut').textContent = savedEmail;
-//     console.log('Displayed saved email in #logOut');
-//   }
-// });
-
 
 document.addEventListener('DOMContentLoaded', () => {
       const userData = JSON.parse(localStorage.getItem('loggedInUser'));
@@ -44,13 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    document.getElementById('logOut').addEventListener('click', () => {
-      localStorage.removeItem('loggedInUser');
-      window.location.href = 'index.html';
-    });
-
-
-
+   
 
 //===this is for items Option=====//
 //===Get the container and arrow buttons===//
