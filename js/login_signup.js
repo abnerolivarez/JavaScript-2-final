@@ -3,15 +3,12 @@
     const showPasswordBtn = document.getElementById('show-password');
 
     showPasswordBtn.addEventListener('click', () => {
-       const icon = showPasswordBtn.querySelector('i');
-       const isHidden = password.getAttribute('type') === 'password';
-
-      password.setAttribute('type', isHidden ? 'text' : 'password');
-      icon.className = isHidden ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye';
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      showPasswordBtn.textContent = type === 'password' ? '👁️' : '🙈';
       
       console.log('showPasswordBtn');
     });
-
 
 
     document.querySelector('.login-form').addEventListener('submit', function(e) {
