@@ -139,7 +139,10 @@ const calculateInterest = document.getElementById('calculateInterest').addEventL
     alert("Please enter valid numbers for principal and months.");
     return;
   }
-
+  if(months < 3){
+        alert("It should be minimum of 3 months");
+        return;
+    }
   
  // Calculate monthly interest
   const monthlyInterest = principal * monthlyRate;
